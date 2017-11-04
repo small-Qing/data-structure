@@ -1,0 +1,43 @@
+
+
+char OP[7]={'+','-','*','/','(',')','#'};
+char precede[7][7]={
+'>','>','<','<','<','>','>',
+'>','>','<','<','<','>','>',
+'>','>','>','>','<','>','>',
+'>','>','>','>','<','>','>',
+'<','<','<','<','<','=',0,
+'>','>','>','>',0,'>','>',
+'<','<','<','<','<',0,'='};
+/*************************对数据操作符数组OP及优先权矩阵的定义*/
+
+/*************************判断输入字符是否为操作符，否则将其认为是数字*/
+char Precede(char op,char c)
+{int pos_op;
+int pos_c;
+int i;
+for (i=0;i<7;i++)
+{if(op==OP[i]) pos_op=i;
+if(c==OP[i]) pos_c=i;
+}
+return(precede[pos_op][pos_c]);
+}
+/*************************对判定为操作符的字符根据优先权矩阵判断其优先顺序*/
+char Operate(char a,char theta,char b)
+{switch(theta)
+	{case '+': return a+b-'0';
+	case '-': return a-b+'0';
+	case '*': return (a-'0')*(b-'0')+'0';
+	case '/': return (a-'0')/(b-'0')+'0';
+}
+}
+/*************************对表达式进行计算，返回计算结果*/
+
+
+int main()
+{char i;
+i=EvaluateExpression();
+printf("\nThis expression's result is:    ");
+printf("%d\n\n\n\n",i-'0');
+}
+return 0;}
