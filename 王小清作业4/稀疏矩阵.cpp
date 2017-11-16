@@ -65,7 +65,7 @@ int main(){
 	tsmatrix b;
 	tsmatrix m;	
 	int c=1,r=1,x,p=0,i,j;
-	freopen("1.txt","r",stdin);
+	//freopen("1.txt","r",stdin);
 	printf("input you matrix a`s r and c:\n");
 	scanf("%d %d",&r,&c);
 	a.mu=r;

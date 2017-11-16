@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1510496966 source:c:\users\dell\desktop\新建文件夹\data structure\王小清作业5\btree\main.cpp
+	<fstream>
+	<stdio.h>
+	<iostream>
+	<stdlib.h>
+	<bits/stdc++.h>
+
