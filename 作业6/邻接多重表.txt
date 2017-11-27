@@ -1,0 +1,22 @@
+邻接多重表也是一种链式存储结构，用来表示无向图，与有向图的十字链表相似，这里也不再细说，直接给出其表示形式：
+
+//无向图的邻接多重表存储表示  
+ #define MAX_NUM 20  
+ typedef struct   
+ {  
+   VisitIf mark; // 访问标记  
+   int ivex,jvex; // 该边依附的两个顶点的位置  
+   EBox *ilink,*jlink; // 分别指向依附这两个顶点的下一条边  
+   InfoType *info; // 该边信息指针，可指向权值或其他信息  
+ }EBox;  
+ typedef struct  
+ {  
+   VertexType data;  
+   EBox *firstedge; // 指向第一条依附该顶点的边  
+ }VexBox;  
+ typedef struct   
+ {  
+   VexBox adjmulist[MAX_NUM];  
+   int vexnum,edgenum; // 无向图的当前顶点数和边数  
+ }Graph;  
+

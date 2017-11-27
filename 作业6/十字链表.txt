@@ -1,0 +1,23 @@
+十字链表也是一种链式存储结构，用来表示有向图，它在有向图邻接表的基础上加入了指向弧尾的指针。
+
+//有向图的十字链表存储表示  
+#define MAX_NUM 20  
+typedef struct // 弧结点  
+{  
+  int tailvex,headvex; // 该弧的尾和头顶点的位置  
+  ArcBox *hlink,*tlink; // 分别为弧头相同和弧尾相同的弧的链域  
+  InfoType *info; // 该弧相关信息的指针，可指向权值或其他信息（可无）  
+}ArcBox;  
+typedef struct // 顶点结点  
+{  
+  VertexType data;  
+  ArcBox *firstin,*firstout; // 分别指向该顶点第一条入弧和出弧  
+}VexNode;  
+struct  
+{  
+  VexNode xlist[MAX_NUM]; // 表头向量(数组)  
+  int vexnum,arcnum; // 有向图的当前顶点数和弧数  
+}Graph;
+
+
+在十字链表中，既容易找到以某个顶点为尾的弧，也容易找到以某个顶点为头的弧，因而容易求得顶点的出度和入度。
